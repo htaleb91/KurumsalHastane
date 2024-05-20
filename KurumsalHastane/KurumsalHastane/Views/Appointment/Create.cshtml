@@ -1,0 +1,39 @@
+﻿@using KurumsalHastane.Models.AppointmentModels
+@model AppointmentModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Create" >
+    <div class="row">
+        <div class="col-12">
+            <div class="float-left">
+                <h1 class="float-left d-inline">Create - </h1><h1 class="d-inline">Appointment</h1>
+
+            </div>
+            <div class="float-right">
+                <input type="submit" value="Save" class="btn btn-primary mr-2" />
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    @Html.Partial("./_CreateOrUpdate.cshtml", Model)
+
+
+    <hr />
+
+
+
+
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

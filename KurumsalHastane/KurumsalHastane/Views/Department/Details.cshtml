@@ -1,0 +1,69 @@
+﻿@model KurumsalHastane.Models.DepartmentModels.DepartmentModel
+
+@{
+
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="float-left">
+            <h1 class="float-left d-inline">Details - </h1><h1 class="d-inline">Department</h1>
+
+        </div>
+        <div class="float-right">
+
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <hr />
+    <div class="row ">
+
+        <div class="col-md-12">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label font-weight-bold"></label>
+                <input asp-for="Name" class="form-control" disabled></input>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Desciption" class="control-label font-weight-bold "></label>
+                <input asp-for="Desciption" class="form-control" disabled />
+                <span asp-validation-for="Desciption" class="text-danger"></span>
+            </div>
+
+            
+            @if (Model.PicturePath is null)
+            {
+                <div class="form-group">
+                    <label asp-for="File" class="control-label font-weight-bold "></label>
+                    <input asp-for="File" class="form-control" disabled />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <label asp-for="PicturePath" class="control-label font-weight-bold "></label>
+                    <input asp-for="File" class="form-control" disabled />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                    <img src="~/@Model.PicturePath" height="100" width="100" />
+
+                </div>
+            }
+
+           
+
+
+        </div>
+        
+
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

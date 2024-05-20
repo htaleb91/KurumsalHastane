@@ -1,0 +1,48 @@
+﻿@model KurumsalHastane.Models.PrescriptionModels.PrescriptionModel
+
+@{
+
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="float-left">
+            <h1 class="float-left d-inline">Details - </h1><h1 class="d-inline">Prescription</h1>
+
+        </div>
+        <div class="float-right">
+
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <hr />
+    <div class="row ">
+
+        <div class="col-md-12">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PatientId" class="control-label font-weight-bold"></label>
+                <select asp-for="PatientId" asp-items="Model.Patients" class="form-control" disabled> </select>
+                    <span asp-validation-for="PatientId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MedicineIds" class="control-label font-weight-bold "></label>
+                <select asp-for="MedicineIds" asp-items="Model.Medicines" multiple  class="form-control" disabled ></select>
+   
+
+                <span asp-validation-for="MedicineIds" class="text-danger"></span>
+            </div>
+
+        </div>
+
+
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

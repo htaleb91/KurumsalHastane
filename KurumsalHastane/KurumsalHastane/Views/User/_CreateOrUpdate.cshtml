@@ -1,0 +1,85 @@
+﻿@model KurumsalHastane.Models.User.UserModel
+
+<div class="row ">
+
+    <div class="col-md-6">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label font-weight-bold"></label>
+            <input asp-for="FirstName" class="form-control"></input>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label font-weight-bold "></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="PasswordHash" class="control-label font-weight-bold "></label>
+            <input asp-for="PasswordHash" class="form-control" type="password" value="@Model.PasswordHash" />
+            <span asp-validation-for="PasswordHash" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DepartmentId" class="control-label font-weight-bold "></label>
+            <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-control"></select>
+            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+        </div>
+        @if(Model.PicturePath is null)
+        {
+            <div class="form-group">
+            <label asp-for="File" class="control-label font-weight-bold "></label>
+            <input asp-for="File" class="form-control" />
+            <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+        }
+        else
+        {
+            <div class="form-group">
+                <label asp-for="PicturePath" class="control-label font-weight-bold "></label>
+                
+                <img src="~/@Model.PicturePath" height="100" width="100" />
+                
+            </div>
+        }
+
+        <div class="form-group form-check">
+            <label class="form-check-label font-weight-bold ">
+                <input class="form-check-input" asp-for="EnableCustomNotificationsViaEmail" /> @Html.DisplayNameFor(model => model.EnableCustomNotificationsViaEmail)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label font-weight-bold ">
+                <input class="form-check-input" asp-for="SubscribeToOurMonthlyNewsletter" /> @Html.DisplayNameFor(model => model.SubscribeToOurMonthlyNewsletter)
+            </label>
+        </div>
+
+
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label font-weight-bold "></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Telefon" class="control-label font-weight-bold "></label>
+            <input asp-for="Telefon" class="form-control" />
+            <span asp-validation-for="Telefon" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword" class="control-label font-weight-bold "></label>
+            <input asp-for="ConfirmPassword" class="form-control" type="password" value="@Model.PasswordHash" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RoleId" class="control-label font-weight-bold "></label>
+            <select asp-for="RoleId" class="form-control" asp-items="Model.Roles"></select>
+            <span asp-validation-for="RoleId" class="text-danger"></span>
+        </div>
+
+    </div>
+
+</div>

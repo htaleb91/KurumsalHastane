@@ -1,0 +1,27 @@
+﻿@model IEnumerable<KurumsalHastane.Models.MedicineModels.MedicineModel>
+
+
+@foreach (var item in Model)
+{
+    <tr class="table-light">
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Desciption)
+        </td>
+        
+       
+
+
+
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary mr-1">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success mr-1">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mr-1">Delete</a>
+        </td>
+    </tr>
+}

@@ -1,0 +1,197 @@
+﻿@using KurumsalHastane.Models.DashboardModels
+@model DashboardModel 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @{
+
+    }
+}
+
+<div class="section welcome-section">
+    <div class="section-content">
+        <div class="card-deck">
+            <div class="card welcome-content-card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 welcome-text-wrapper align-self-center">
+                            <h5>hello,  @Context.Session.GetString("UserName")</h5>
+                            <p>Welcome to your dashboard</p>
+                        </div>
+                        <div class="col-md-6 welcome-img-wrapper">
+                            <img src="../SiteAssets/images/hello.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card app-stats-card">
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <i class="las la-user-injured la-3x align-self-center"></i>
+                            <p>Total Patients</p>
+                            <h4><a href="">@Model.PatientsCount</a></h4>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="las la-user-md la-3x align-self-center"></i>
+                            <p>Total Doctors</p>
+                            <h4><a href="">@Model.SpecialtsCount</a></h4>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="las la-clinic-medical la-3x align-self-center"></i>
+                            <p>Total Clinics</p>
+                            <h4><a href="">@Model.DepartmentsCount</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section functionality-section">
+    <div class="section-content">
+        <div class="card-deck">
+            <a class="card text-center" asp-controller="Nurse" asp-action="Create">
+                <div class="card-title">
+                    <div class="icon-wrapper">
+                        <i class="las la-clinic-medical"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>Add a Nurse</p>
+                 </div>
+            </a>
+            <a class="card text-center" asp-controller="Specialist" asp-action="Create">
+                <div class="card-title">
+                    <div class="icon-wrapper">
+                        <i class="las la-user-md"></i>
+                    </div>
+                </div>
+                <div class="card-body"><p>Add a Specialist</p></div>
+            </a>
+            <a class="card text-center" asp-controller="Patient" asp-action="Create">
+                <div class="card-title">
+                    <div class="icon-wrapper">
+                        <i class="las la-user-plus"></i>
+                    </div>
+                </div>
+                <div class="card-body"><p>Add a Patient</p></div>
+            </a>
+            <a class="card text-center" asp-controller="User" asp-action="Create">
+                <div class="card-title">
+                    <div class="icon-wrapper">
+                        <i class="las la-user-lock"></i>
+                    </div>
+                </div>
+                <div class="card-body"><p>Add User</p></div>
+            </a>
+            <a class="card text-center" asp-controller="Department" asp-action="Create">
+                <div class="card-title">
+                    <div class="icon-wrapper">
+                        <i class="las la-plus-circle"></i>
+                    </div>
+                </div>
+                <div class="card-body"><p>Add Department</p></div>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="section card-summaries">
+    <div class="section-content">
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-header"><h5>Doctors List</h5></div>
+                <div class="card-body">
+                    <table class="table table-borderless table-hover table-responsive-md">
+                        <tbody>
+                            @foreach(var specialist in Model.Specialists)
+                            {
+                                <tr>
+                                <td>
+                                    <img class="rounded-circle"
+                                         src="/@specialist.PicturePath"
+                                         loading="lazy" />
+                                </td>
+                                <td>
+                                        <p>@specialist.FirstName @specialist.LastName</p>
+                                        <small class="text-muted"> @specialist.Email</small>
+                                </td>
+                                   
+                                    <td class="text-right"><p> @specialist.Telefon</p></td>
+                                <td class="text-right">
+                                    <button class="btn btn-dark-red-f btn-sm" asp-controller="Appointment" asp-action="MakeDoctorAppointment">
+                                        appointment
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm">
+                                        <i class="las la-ellipsis-h"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            }
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <a class="view-more" asp-controller="Specialist" asp-action="Index">
+                        more<i class="las la-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h5>upcoming appointments</h5></div>
+                <div class="card-body">
+                    <table class="table table-borderless table-hover table-responsive-md">
+                        <tbody>
+                            @foreach(var appointment in Model.Appointments)
+                            {
+                                <tr>
+                                    <td>
+                                        <p>@appointment.Department.Name </p>
+                                        
+                                    </td>
+                                    <td>
+                                        <p>@appointment.Patient.FirstName @appointment.Patient.LastName</p>
+                                        <small class="text-muted">@appointment.Patient.Telefon</small>
+                                    </td>
+                                    <td>
+                                        <p class="text-muted">@appointment.Specialist.FirstName @appointment.Specialist.LastName</p>
+                                        <small class="text-muted">@appointment.Specialist.Telefon</small>
+                                    </td>
+                                    <td class="text-right"><p>@((appointment.AppointnentDate - DateTime.UtcNow  ).Days)</p></td>
+                                    <td class="text-right">
+                                        <button class="btn">
+                                            <i class="las la-check-circle"></i>
+                                        </button><button class="btn">
+                                            <i class="las la-times-circle"></i>
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm">
+                                            <i class="las la-ellipsis-h"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <a class="view-more" asp-controller="Appointment" asp-action="Index">
+                        more<i class="las la-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+

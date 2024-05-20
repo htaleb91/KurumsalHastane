@@ -1,0 +1,33 @@
+﻿@model KurumsalHastane.Models.SpecialistModels.SpecialistModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12">
+            <div class="float-left">
+                <h1 class="float-left d-inline">Update - </h1><h1 class="d-inline">Specialist</h1>
+
+            </div>
+            <div class="float-right">
+                <input type="submit" value="Save" class="btn btn-primary mr-2" />
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    @Html.Partial("./_CreateOrUpdate.cshtml", Model)
+
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

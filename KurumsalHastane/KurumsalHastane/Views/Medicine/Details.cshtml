@@ -1,0 +1,60 @@
+﻿@model KurumsalHastane.Models.MedicineModels.MedicineModel
+
+@{
+
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="float-left">
+            <h1 class="float-left d-inline">Details - </h1><h1 class="d-inline">Medicine</h1>
+
+        </div>
+        <div class="float-right">
+
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <hr />
+    <div class="row ">
+
+        <div class="col-md-12">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label font-weight-bold"></label>
+                <input asp-for="Name" class="form-control" disabled></input>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Desciption" class="control-label font-weight-bold "></label>
+                <textarea asp-for="Desciption" class="form-control" disabled></textarea>
+                <span asp-validation-for="Desciption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsageWay" class="control-label font-weight-bold "></label>
+                <textarea asp-for="UsageWay" class="form-control" disabled></textarea>
+                <span asp-validation-for="UsageWay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SideEffects" class="control-label font-weight-bold "></label>
+                <textarea asp-for="SideEffects" class="form-control"  disabled></textarea>
+                <span asp-validation-for="SideEffects" class="text-danger"></span>
+            </div>
+           
+
+
+
+
+        </div>
+
+
+    </div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

@@ -1,0 +1,36 @@
+﻿@model KurumsalHastane.Models.MedicineModels.MedicineModel
+
+<div class="row ">
+
+    <div class="col-md-12">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label font-weight-bold"></label>
+            <input asp-for="Name" class="form-control"></input>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+       
+        <div class="form-group">
+            <label asp-for="Desciption" class="control-label font-weight-bold "></label>
+            <textarea asp-for="Desciption" class="form-control" ></textarea>
+            <span asp-validation-for="Desciption" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UsageWay" class="control-label font-weight-bold "></label>
+            <textarea asp-for="UsageWay" class="form-control"></textarea>
+            <span asp-validation-for="UsageWay" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SideEffects" class="control-label font-weight-bold "></label>
+            <textarea asp-for="SideEffects" class="form-control"></textarea>
+            <span asp-validation-for="SideEffects" class="text-danger"></span>
+        </div>
+
+
+    </div>
+
+
+</div>

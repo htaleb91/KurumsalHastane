@@ -1,0 +1,182 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="float-left">
+            <h1 class="float-left d-inline">Nurses List</h1>
+
+        </div>
+        <div class="float-right">
+            <a asp-action="Create" class="btn btn-primary mr-2">Create New</a>
+        </div>
+    </div>
+
+</div>
+<section class="content ">
+    <div class="container-fluid">
+        <div class="form-horizontal ">
+            <div class="cards-group ">
+                <div class="card card-default card-search bg-light-red ">
+                    <div class="card-body ">
+                        <div class="row ">
+                            <div class="pl-3 font-weight-bold">Search</div>
+                            <div class="icon-search"><i class="fas fa-search"></i></div>
+
+                        </div>
+                        <div class="search-body mr-5">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <div class="label-wrapper  float-right">
+                                                <label class="col-form-label" for="Name">Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input id="search-Name" name="Name" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <div class="label-wrapper  float-right">
+                                                <label class="col-form-label" for="Email">Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input id="search-Email" name="Email" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="text-center col-3">
+                                    <button type="button" id="search-Button" class="btn btn-primary btn-search">
+                                        <i class="fas fa-search"></i>Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+
+
+                    <table class="table table-striped table-hover ">
+                        <thead class="bg-light-red">
+                            <tr>
+                                <th>
+                                    Picture
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+
+                                <th>
+                                    Role
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Telefon
+                                </th>
+                                <th>
+                                    Operations <a class="float-right" style="cursor: pointer;" id="refresh-Button"><img height="25" width="25" src="~/SiteAssets/images/refresh-button.png" /></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="nurse-table-body">
+                        </tbody>
+
+                        <tfoot class="bg-light-red">
+                            <tr>
+                                <th>
+                                    Picture
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+
+                                <th>
+                                    Role
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Telefon
+                                </th>
+                                <th>
+                                    Operations
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            url: "/Nurse/List",
+            type: 'POST',
+            data: '',
+            success: function (response) {
+                $('#nurse-table-body').html(response);
+            },
+            error: function (xhr, status, error) {
+                alert('Error:', error);
+            }
+        });
+    });
+    $(document).ready(function () {
+        $("#refresh-Button").on('click', function () {
+            $.ajax({
+                url: "/Nurse/List",
+                type: 'POST',
+                data: '',
+                success: function (response) {
+                    $('#nurse-table-body').html(response);
+                },
+                error: function (xhr, status, error) {
+                    alert('Error:', error);
+                }
+            });
+        });
+        $("#search-Button").on('click', function () {
+
+            var postData = {
+                'name': $('#search-Name').val(),
+                'email': $('#search-Email').val()
+            };
+            console.log(postData)
+            $.ajax({
+                url: "/Nurse/SearchList",
+                type: 'POST',
+                data: postData,
+                success: function (response) {
+                    $('#nurse-table-body').html(response);
+                },
+                error: function (xhr, status, error) {
+                    alert('Error:', error);
+                }
+            });
+        });
+    });
+</script>
+@section Scripts {
+    @{
+
+    }
+}

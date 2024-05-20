@@ -1,0 +1,86 @@
+﻿@model KurumsalHastane.Models.NurseModels.NurseModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h4 class="d-inline">Are you sure you want to delete this <h3 class="d-inline text-danger">Nurse ?</h3></h4>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <div class="row col-sm-6">
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.RoleId)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.RoleName)
+            </dd>
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Telefon)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Telefon)
+            </dd>
+
+
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.SubscribeToOurMonthlyNewsletter)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.SubscribeToOurMonthlyNewsletter)
+            </dd>
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.EnableCustomNotificationsViaEmail)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.EnableCustomNotificationsViaEmail)
+            </dd>
+        </div>
+        <div class="row col-6">
+
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.PicturePath)
+            </dt>
+            <dd class="col-sm-8">
+                <img src="~/@Html.DisplayFor(model => model.PicturePath)" width="375" height="375" />/>"
+            </dd>
+        </div>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
