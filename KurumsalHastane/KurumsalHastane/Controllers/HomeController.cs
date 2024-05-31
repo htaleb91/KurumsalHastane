@@ -18,6 +18,11 @@ namespace KurumsalHastane.Controllers
             _context = context;
             _passwordHasherService = passwordHasherService;
         }
+        public IActionResult IndexDashboard()
+        {
+            var model = new HomeModel();
+            return View(model);
+        }
         public IActionResult Index()
         {
             var model = new HomeModel();

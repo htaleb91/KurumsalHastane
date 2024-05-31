@@ -1,0 +1,173 @@
+﻿@using KurumsalHastane.Models.HomeModels
+@model HomeModel
+@{
+    Layout = "_HomeLayout1";
+}
+
+<div class="hero-section">
+    <div class="buttons-wrapper">
+        <h1>welcome to our&nbsp;<u>healthcare</u> solution</h1>
+        <div class="buttons">
+            @*<a class="btn btn-dark-blue-f btn-lg mr-4" href="#blogs">Blogs</a>*@
+            <!-- Button trigger modal -->
+            <a class="btn btn-dark-green-f btn-lg mr-4 text-white" href="" data-toggle="modal" data-target="#exampleModal">Sign-in </a>
+
+        </div>
+    </div>
+
+
+    @*
+    <div class="card-deck mx-5 ">
+        <div class="card bg-primary text-white mr-4">
+            <div class="card-header"><h5>Dashboard module</h5></div>
+            <div class="card-body">
+                <p class="card-text">
+                    A module that allow customers to control the whole system and monitor the new events and statistics.
+
+                </p>
+            </div>
+        </div>
+        <div class="card bg-danger text-white mr-4">
+            <div class="card-header">
+                <h5>Patients / Specialists module</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    A module that allow customers to control Patients / Specialists by adding new ones and manage it from the system.
+
+                </p>
+            </div>
+        </div>
+        <div class="card bg-info text-white mr-4">
+            <div class="card-header"><h5>Appointment module</h5></div>
+            <div class="card-body">
+                <p class="card-text">
+                    A module that allow customers to control appointments by adding new appointments and manage it from the system.
+                </p>
+            </div>
+        </div>
+        <div class="card bg-success text-white mr-4 ">
+
+            <div class="card-header">
+                <h5>Clinc module</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    A module that allow customers to manage clinics by adding new ones or remove existing from the system.
+                </p>
+            </div>
+
+        </div>
+    </div>
+    *@
+</div>
+
+
+
+
+
+@Html.Partial("SignInModal", Model.SignInModel)
+
+
+@Html.Partial("ChangePasswordModal", Model.ChangePasswordModel)
+
+
+
+
+</div>
+@*
+<div id="blogs" class="homeHero-section">
+    <div class="">
+
+
+        <div class="container-fluid  ">
+            <div class="section-content row mx-5 ">
+                <div class="card-deck  col-6">
+                    <div class="card rounded" ">
+                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/burun-eti-nedir--907">
+                            <div class="card-header">
+                                <h3>Burun eti nedir?</h3>
+                            </div>
+                            <div class="row ml-6">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="~/SiteAssets/images/burun.jpg" width="150" height="150" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text text-dark display-5">Burun eti, halk arasında bir çok farklı anatomik yapı için kullanılmaktadır. Bazen de hekimler farklı anatomik oluşumları tarif etmek için, burun eti tabirini kullanırlar. Dolayısı ile, burun eti tabirinden kastedilen, maalesef homojen bir yapı değildir. Aşağıda burunda gördüğümüz ve burun eti olarak tabir edilen oluşumlardan bahsedeceğiz.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-deck  col-6">
+                    <div class="card">
+                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/sinus-mantar-enfeksiyonlari-902">
+                            <div class="card-header">
+                                <h3>Sinüs Mantar Enfeksiyonları</h3>
+                            </div>
+                            <div class="row ml-6">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="~/SiteAssets/images/mantar.jpg" width="150" height="150" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text text-dark display-5">
+                                            Covid-19 pandemisi hayatımıza her gün yeni kavramlar ekliyor. Bunlardan bir tanesi eskiden de varolan, fakat son yıllarda sıklığı artan sinüs mantar enfeksiyonlarıdır. Özellikle Covid-19 pandemisi sonrasında, yoğun bakımlarda artan yatış oranları ve steroidli ilaçların kullanımında ki artış, sinüs mantar enfeksiyonlarında ciddi artışa ve buna bağlı ölümlere yol açmaktadır. Samsun’da ve karedenizde de son aylarda sinüs mantar enfeksiyonlarının sıklığında artış oldu.
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-deck  col-6">
+                    <div class="card">
+                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/rinoplasti-hakkinda-7-soru-900">
+                            <div class="card-header">
+                                <h3>Rinoplasti hakkında 7 soru</h3>
+                            </div>
+                            <div class="row ml-6">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="~/SiteAssets/images/rinoplasti.jpg" width="150" height="150" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text text-dark display-5">
+                                            Burun estetiği (Rinoplasti) sonrasında ne kadar morarma ve şişlik oluşur? Ne zaman geçer?
+                                            Cilt yapınıza, burnun durumuna ve ameliyatın şekline göre değişik miktarlarda morarma ve şişlik oluşabilir. Morarma sıklıkla 7-10 gün içinde geçmekle birlikte, tam geçmesi nadiren bir aya kadar uzar.
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-deck  col-6">
+                    <div class="card">
+                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/kulak-kiri--buson--908">
+                            <div class="card-header">
+                                <h3>Kulak Kiri (Buşon)</h3>
+                            </div>
+                            <div class="row ml-6">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="~/SiteAssets/images/kulak.jpg" width="150" height="150" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text text-dark display-5">
+
+                                            Kulak kanalının giriş kısmında, kulağı yabancı maddelere, tozlara, enfeksiyona karşı koruyan ve serümen adı verilen bir madde salgılanır.
+                                            Bu maddenin salgılanması doğaldır ve fizyolojiktir. Normalde çene hareketleri ile bu salgı dışarıya doğru itilir ve kulaktan dışarıya atılır. Dışarıya atılan buşon ise kulak kepçesinden, çoğu zaman bireyler tarafından temizlenir.
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+*@

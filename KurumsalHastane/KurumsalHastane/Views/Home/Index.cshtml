@@ -3,170 +3,497 @@
 @{
     Layout = "_HomeLayout";
 }
-
-<div class="hero-section">
-    <div class="buttons-wrapper">
-        <h1>welcome to our&nbsp;<u>healthcare</u> solution</h1>
-        <div class="buttons">
-            <a class="btn btn-dark-blue-f btn-lg mr-4" href="#blogs">Blogs</a>
-            <!-- Button trigger modal -->
-            <a class="btn btn-dark-green-f btn-lg mr-4 text-white" href="" data-toggle="modal" data-target="#exampleModal">Sign-in </a>
-
-        </div>
-    </div>
-
-
-
-    <div class="card-deck mx-5 ">
-        <div class="card bg-primary text-white mr-4">
-            <div class="card-header"><h5>Dashboard module</h5></div>
-            <div class="card-body">
-                <p class="card-text">
-                    A module that allow customers to control the whole system and monitor the new events and statistics.
-
-                </p>
-            </div>
-        </div>
-        <div class="card bg-danger text-white mr-4">
-            <div class="card-header">
-                <h5>Patients / Specialists module</h5>
-            </div>
-            <div class="card-body">
-                <p class="card-text">
-                    A module that allow customers to control Patients / Specialists by adding new ones and manage it from the system.
-
-                </p>
-            </div>
-        </div>
-        <div class="card bg-info text-white mr-4">
-            <div class="card-header"><h5>Appointment module</h5></div>
-            <div class="card-body">
-                <p class="card-text">
-                    A module that allow customers to control appointments by adding new appointments and manage it from the system.
-                </p>
-            </div>
-        </div>
-        <div class="card bg-success text-white mr-4 ">
-
-            <div class="card-header">
-                <h5>Clinc module</h5>
-            </div>
-            <div class="card-body">
-                <p class="card-text">
-                    A module that allow customers to manage clinics by adding new ones or remove existing from the system.
-                </p>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-
-
-
 @Html.Partial("SignInModal", Model.SignInModel)
 
 
 @Html.Partial("ChangePasswordModal", Model.ChangePasswordModel)
+<main>
+    <article>
 
+        <!--
+          - #HERO
+        -->
 
+        <section class="section hero" style="background-image: url('./assets/images/hero-bg.png')" aria-label="home">
+            <div class="container">
 
+                <div class="hero-content">
 
-</div>
+                    <p class="hero-subtitle has-before" data-reveal="left">Welcome To Doclab</p>
 
-<div id="blogs" class="homeHero-section">
-    <div class="">
+                    <h1 class="headline-lg hero-title" data-reveal="left">
+                        Find Nearest <br>
+                        Doctor.
+                    </h1>
 
+                    <div class="hero-card" data-reveal="left">
 
-        <div class="container-fluid  ">
-            <div class="section-content row mx-5 ">
-                <div class="card-deck  col-6">
-                    <div class="card rounded" ">
-                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/burun-eti-nedir--907">
-                            <div class="card-header">
-                                <h3>Burun eti nedir?</h3>
+                        <p class="title-lg card-text">
+                            Search doctors. clinics. hospitals. etc.
+                        </p>
+
+                        <div class="wrapper">
+
+                            <div class="input-wrapper title-lg">
+                                <input type="text" name="location" placeholder="Locations" class="input-field">
+
+                                <ion-icon name="location"></ion-icon>
                             </div>
-                            <div class="row ml-6">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="~/SiteAssets/images/burun.jpg" width="150" height="150" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text text-dark display-5">Burun eti, halk arasında bir çok farklı anatomik yapı için kullanılmaktadır. Bazen de hekimler farklı anatomik oluşumları tarif etmek için, burun eti tabirini kullanırlar. Dolayısı ile, burun eti tabirinden kastedilen, maalesef homojen bir yapı değildir. Aşağıda burunda gördüğümüz ve burun eti olarak tabir edilen oluşumlardan bahsedeceğiz.</p>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </a>
+                            <button class="btn has-before">
+                                <ion-icon name="search"></ion-icon>
+
+                                <span class="span title-md">Find Now</span>
+                            </button>
+
+                        </div>
+
                     </div>
-                </div>
-                <div class="card-deck  col-6">
-                    <div class="card">
-                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/sinus-mantar-enfeksiyonlari-902">
-                            <div class="card-header">
-                                <h3>Sinüs Mantar Enfeksiyonları</h3>
-                            </div>
-                            <div class="row ml-6">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="~/SiteAssets/images/mantar.jpg" width="150" height="150" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text text-dark display-5">
-                                            Covid-19 pandemisi hayatımıza her gün yeni kavramlar ekliyor. Bunlardan bir tanesi eskiden de varolan, fakat son yıllarda sıklığı artan sinüs mantar enfeksiyonlarıdır. Özellikle Covid-19 pandemisi sonrasında, yoğun bakımlarda artan yatış oranları ve steroidli ilaçların kullanımında ki artış, sinüs mantar enfeksiyonlarında ciddi artışa ve buna bağlı ölümlere yol açmaktadır. Samsun’da ve karedenizde de son aylarda sinüs mantar enfeksiyonlarının sıklığında artış oldu.
-                                        </p>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-deck  col-6">
-                    <div class="card">
-                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/rinoplasti-hakkinda-7-soru-900">
-                            <div class="card-header">
-                                <h3>Rinoplasti hakkında 7 soru</h3>
-                            </div>
-                            <div class="row ml-6">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="~/SiteAssets/images/rinoplasti.jpg" width="150" height="150" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text text-dark display-5">
-                                            Burun estetiği (Rinoplasti) sonrasında ne kadar morarma ve şişlik oluşur? Ne zaman geçer?
-                                            Cilt yapınıza, burnun durumuna ve ameliyatın şekline göre değişik miktarlarda morarma ve şişlik oluşabilir. Morarma sıklıkla 7-10 gün içinde geçmekle birlikte, tam geçmesi nadiren bir aya kadar uzar.
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card-deck  col-6">
-                    <div class="card">
-                        <a class=" text-decoration-none" href="https://www.drozgurkemal.com/kulak-kiri--buson--908">
-                            <div class="card-header">
-                                <h3>Kulak Kiri (Buşon)</h3>
-                            </div>
-                            <div class="row ml-6">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="~/SiteAssets/images/kulak.jpg" width="150" height="150" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <p class="card-text text-dark display-5">
-
-                                            Kulak kanalının giriş kısmında, kulağı yabancı maddelere, tozlara, enfeksiyona karşı koruyan ve serümen adı verilen bir madde salgılanır.
-                                            Bu maddenin salgılanması doğaldır ve fizyolojiktir. Normalde çene hareketleri ile bu salgı dışarıya doğru itilir ve kulaktan dışarıya atılır. Dışarıya atılan buşon ise kulak kepçesinden, çoğu zaman bireyler tarafından temizlenir.
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
                 </div>
 
-
+                <figure class="hero-banner" data-reveal="right">
+                    <img src="./assets/images/hero-banner.png" width="590" height="517" loading="eager" alt="hero banner"
+                         class="w-100">
+                </figure>
 
             </div>
-        </div>
-    </div>
-</div>
+        </section>
+
+
+
+
+
+        <!--
+          - #SERVICE
+     
+
+        <section class="service" aria-label="service">
+            <div class="container">
+
+                <ul class="service-list">
+
+                    <li>
+                        <div class="service-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-1.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <h3 class="headline-sm card-title">
+                                <a href="#">Psychiatry</a>
+                            </h3>
+
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                            </p>
+
+                            <button class="btn-circle" aria-label="read more about psychiatry">
+                                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                            </button>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="service-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-2.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <h3 class="headline-sm card-title">
+                                <a href="#">Gynecology</a>
+                            </h3>
+
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                            </p>
+
+                            <button class="btn-circle" aria-label="read more about Gynecology">
+                                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                            </button>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="service-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-3.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <h3 class="headline-sm card-title">
+                                <a href="#">Pulmonology</a>
+                            </h3>
+
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                            </p>
+
+                            <button class="btn-circle" aria-label="read more about Pulmonology">
+                                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                            </button>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="service-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-4.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <h3 class="headline-sm card-title">
+                                <a href="#">Orthopedics</a>
+                            </h3>
+
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing
+                            </p>
+
+                            <button class="btn-circle" aria-label="read more about Orthopedics">
+                                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                            </button>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+
+        -->
+
+        <!--
+          - #ABOUT
+        -->
+
+        <section class="section about" aria-labelledby="about-label">
+            <div class="container">
+
+                <div class="about-content">
+
+                    <p class="section-subtitle title-lg has-after" id="about-label" data-reveal="left">About Us</p>
+
+                    <h2 class="headline-md" data-reveal="left">Experienced Workers</h2>
+
+                    <p class="section-text" data-reveal="left">
+                        Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est.
+                        Aliquam
+                    </p>
+
+                    <ul class="tab-list" data-reveal="left">
+
+                        <li>
+                            <button class="tab-btn active">Vision</button>
+                        </li>
+
+                        <li>
+                            <button class="tab-btn">Mission</button>
+                        </li>
+
+                        <li>
+                            <button class="tab-btn">Strategy</button>
+                        </li>
+
+                    </ul>
+
+                    <p class="tab-text" data-reveal="left">
+                        Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est.
+                        Aliquam a bibendum mi, sed condimentum
+                    </p>
+
+                    <div class="wrapper">
+
+                        <ul class="about-list">
+
+                            <li class="about-item" data-reveal="left">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                                <span class="span">Sonsectetur adipisicing elit</span>
+                            </li>
+
+                            <li class="about-item" data-reveal="left">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                                <span class="span">Exercitation ullamco laboris</span>
+                            </li>
+
+                            <li class="about-item" data-reveal="left">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                                <span class="span">Eiusmod tempor incididunt</span>
+                            </li>
+
+                            <li class="about-item" data-reveal="left">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon>
+
+                                <span class="span">Aolore magna aliqua</span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <figure class="about-banner" data-reveal="right">
+                    <img src="./assets/images/about-banner.png" width="554" height="678" loading="lazy" alt="about banner"
+                         class="w-100">
+                </figure>
+
+            </div>
+        </section>
+
+
+
+
+
+        <!--
+          - #LISTING
+        -->
+
+        <section class="section listing" aria-labelledby="listing-label">
+            <div class="container">
+
+                <ul class="grid-list">
+
+                    <li>
+                        <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">Doctors Listig</p>
+
+                        <h2 class="headline-md" data-reveal="left">Browse by specialist</h2>
+                    </li>
+
+                    <li>
+                        <div class="listing-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-1.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <div>
+                                <h3 class="headline-sm card-title">Eye Diseases</h3>
+
+                                <p class="card-text">Porta velit</p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="listing-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-2.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <div>
+                                <h3 class="headline-sm card-title">Dermatology</h3>
+
+                                <p class="card-text">Mattis augue</p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="listing-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-4.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <div>
+                                <h3 class="headline-sm card-title">Cardiovascular Diseases</h3>
+
+                                <p class="card-text">Mauris laoreet</p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="listing-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-5.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <div>
+                                <h3 class="headline-sm card-title">Orthopedics</h3>
+
+                                <p class="card-text">Convallis vulputate</p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="listing-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-6.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <div>
+                                <h3 class="headline-sm card-title">Pediatrics</h3>
+
+                                <p class="card-text">Posuere maecenas</p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="listing-card" data-reveal="bottom">
+
+                            <div class="card-icon">
+                                <img src="./assets/images/icon-7.png" width="71" height="71" loading="lazy" alt="icon">
+                            </div>
+
+                            <div>
+                                <h3 class="headline-sm card-title">Osteology</h3>
+
+                                <p class="card-text">Nisi nullam</p>
+                            </div>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+
+
+
+        <!--
+          - #BLOG
+        -->
+
+        <section class="section blog" aria-labelledby="blog-label">
+            <div class="container">
+
+                <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom">
+                    News & Article
+                </p>
+
+                <h2 class="section-title headline-md text-center" data-reveal="bottom">Latest Articles</h2>
+
+                <ul class="grid-list">
+
+                    <li>
+                        <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                            <div class="meta-wrapper">
+
+                                <div class="card-meta">
+                                    <ion-icon name="person-outline"></ion-icon>
+
+                                    <span class="span">By Admin</span>
+                                </div>
+
+                                <div class="card-meta">
+                                    <ion-icon name="folder-outline"></ion-icon>
+
+                                    <span class="span">Specialist</span>
+                                </div>
+
+                            </div>
+
+                            <h3 class="headline-sm card-title">Burun eti nedir?</h3>
+
+                            <time class="title-sm date" datetime="2022-01-28">25 April, 2024</time>
+
+                            <p class="card-text">
+                                Burun eti, halk arasında bir çok farklı anatomik yapı için kullanılmaktadır. Bazen de hekimler farklı anatomik oluşumları tarif etmek için, burun eti tabirini kullanırlar. Dolayısı ile, burun eti tabirinden kastedilen, maalesef homojen bir yapı değildir. Aşağıda burunda gördüğümüz ve burun eti olarak tabir edilen oluşumlardan bahsedeceğiz.
+                            </p>
+
+                            <a target="_blank" href="https://www.drozgurkemal.com/burun-eti-nedir--907" class="btn-text title-lg">Read More</a>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                            <div class="meta-wrapper">
+
+                                <div class="card-meta">
+                                    <ion-icon name="person-outline"></ion-icon>
+
+                                    <span class="span">By Admin</span>
+                                </div>
+
+                                <div class="card-meta">
+                                    <ion-icon name="folder-outline"></ion-icon>
+
+                                    <span class="span">Specialist</span>
+                                </div>
+
+                            </div>
+
+                            <h3 class="headline-sm card-title">Sinüs Mantar Enfeksiyonları</h3>
+
+                            <time class="title-sm date" datetime="2022-01-28">18 March, 2024</time>
+
+                            <p class="card-text">
+                                Covid-19 pandemisi hayatımıza her gün yeni kavramlar ekliyor. Bunlardan bir tanesi eskiden de varolan, fakat son yıllarda sıklığı artan sinüs mantar enfeksiyonlarıdır. Özellikle Covid-19 pandemisi sonrasında, yoğun bakımlarda artan yatış oranları ve steroidli ilaçların kullanımında ki artış, sinüs mantar enfeksiyonlarında ciddi artışa ve buna bağlı ölümlere yol açmaktadır. Samsun’da ve karedenizde de son aylarda sinüs mantar enfeksiyonlarının sıklığında artış oldu.
+
+                            </p>
+
+                            <a target="_blank" href="https://www.drozgurkemal.com/sinus-mantar-enfeksiyonlari-902" class="btn-text title-lg">Read More</a>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="blog-card has-before has-after" data-reveal="bottom">
+
+                            <div class="meta-wrapper">
+
+                                <div class="card-meta">
+                                    <ion-icon name="person-outline"></ion-icon>
+
+                                    <span class="span">By Admin</span>
+                                </div>
+
+                                <div class="card-meta">
+                                    <ion-icon name="folder-outline"></ion-icon>
+
+                                    <span class="span">Specialist</span>
+                                </div>
+
+                            </div>
+
+                            <h3 class="headline-sm card-title">Rinoplasti hakkında 7 soru !</h3>
+
+                            <time class="title-sm date" datetime="2022-01-28">28 June, 2024</time>
+
+                            <p class="card-text">
+                                Burun estetiği (Rinoplasti) sonrasında ne kadar morarma ve şişlik oluşur? Ne zaman geçer?
+                                Cilt yapınıza, burnun durumuna ve ameliyatın şekline göre değişik miktarlarda morarma ve şişlik oluşabilir. Morarma sıklıkla 7-10 gün içinde geçmekle birlikte, tam geçmesi nadiren bir aya kadar uzar.
+
+                            </p>
+
+                            <a target="_blank" href="https://www.drozgurkemal.com/rinoplasti-hakkinda-7-soru-900" class="btn-text title-lg">Read More</a>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+    </article>
+</main>
+
